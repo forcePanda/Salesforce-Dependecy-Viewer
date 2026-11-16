@@ -2,8 +2,6 @@
 
 SFDV is a VS Code extension for exploring dependencies between Salesforce metadata in your **local** project—Apex classes, Flows, objects, fields, Lightning components, and more.
 
-NOTE: The extension runs on the
-
 > **Heads-up:** This is a **vibe-coded extension** built with AI assistance. It has automated tests, but hasn't been thoroughly tested on real Salesforce projects. References may be missed or incorrect. **Feedback, bug reports, and PRs are welcome!**
 
 ## Commands
