@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Calculate Tax</label>
+<start><object>Invoice__c</object></start>
+<subflows><name>Notify</name><flowName>Notify_Accounting</flowName></subflows>
+<recordLookups><name>GetInvoice</name><object>Invoice__c</object>
+  <filters><field>Amount__c</field><operator>GreaterThan</operator><value><numberValue>0</numberValue></value></filters>
+</recordLookups>
+<actionCalls><name>Calculate</name><actionType>apex</actionType><actionName>TaxCalculator</actionName></actionCalls>
+</Flow>

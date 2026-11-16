@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<masterLabel>Invoice Duplicate</masterLabel><duplicateRuleMatchRules><matchingRule>Invoice__c.Invoice_Match</matchingRule></duplicateRuleMatchRules>
+</DuplicateRule>

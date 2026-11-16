@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Calculate Tax</label><processType>AutoLaunchedFlow</processType><status>Active</status>
+<start><object>Invoice__c</object><recordTriggerType>Update</recordTriggerType></start>
+<subflows><name>Notify</name><flowName>Notify_Accounting</flowName></subflows>
+<actionCalls><name>Compute</name><actionType>apex</actionType><actionName>TaxCalculator</actionName></actionCalls>
+<apexPluginCalls><name>OldPlugin</name><apexClass>BillingService</apexClass></apexPluginCalls>
+<screens><name>InvoiceScreen</name><fields><name>InvoiceTile</name><extensionName>c:invoiceTile</extensionName></fields></screens>
+<actionCalls><name>NotAnApexCall</name><actionType>emailAlert</actionType><actionName>BillingService</actionName></actionCalls>
+<recordLookups><name>Find_Invoice</name><object>Invoice__c</object><filters><field>Amount__c</field><operator>GreaterThan</operator><value><numberValue>0</numberValue></value></filters><outputAssignments><field>Status__c</field></outputAssignments></recordLookups>
+<recordUpdates><name>Update_Invoice</name><object>Invoice__c</object><inputAssignments><field>Status__c</field><value><stringValue>Processed</stringValue></value></inputAssignments></recordUpdates>
+<formulas><name>TotalWithTax</name><expression>$Record.Amount__c + $Record.Amount__c * 0.1</expression></formulas>
+</Flow>

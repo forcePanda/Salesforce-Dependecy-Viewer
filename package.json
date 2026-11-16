@@ -1,0 +1,131 @@
+{
+  "name": "SFDV",
+  "displayName": "SFDV: Salesforce Dependency Viewer",
+  "description": "Explore Salesforce Metadata API dependencies directly from your source repository.",
+  "publisher": "forcepanda",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "Salesforce",
+    "dependencies",
+    "metadata",
+    "graph",
+    "SFDV"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onCommand:SFDV.showOrgDependencyGraph",
+    "onCommand:SFDV.showReferencedMetadata",
+    "onCommand:SFDV.showReferencingMetadata"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "SFDV.showOrgDependencyGraph",
+        "title": "SFDV: Show org's dependency graph"
+      },
+      {
+        "command": "SFDV.showReferencedMetadata",
+        "title": "SFDV: Show Metadata referenced in current file"
+      },
+      {
+        "command": "SFDV.showReferencingMetadata",
+        "title": "SFDV: Show Metadata referencing current file"
+      }
+    ],
+    "configuration": {
+      "title": "SFDV",
+      "properties": {
+        "sfdv.sourceFolder": {
+          "type": "string",
+          "default": "force-app",
+          "scope": "resource",
+          "description": "Folder to analyze, relative to the workspace root. Files outside this folder are ignored. Absolute and parent-traversing paths are not allowed."
+        },
+        "sfdv.maxGraphNodes": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 5000,
+          "default": 1200,
+          "description": "Maximum number of nodes rendered simultaneously in the overview. The analyzer still indexes all nodes."
+        },
+        "sfdv.maxFiles": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 100000,
+          "default": 20000,
+          "description": "Safety limit on the number of metadata source files inspected during analysis."
+        },
+        "sfdv.maxFileSizeKB": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 20480,
+          "default": 5120,
+          "description": "Maximum metadata file size read, in KiB. Oversized files appear in diagnostics instead of being silently skipped."
+        },
+        "sfdv.customRules": {
+          "type": "array",
+          "default": [],
+          "description": "Additional declarative XML dependency rules. Each object supports id, sourceType, path, targetType, relation, transform, and optional when. Duplicate ids override bundled rules.",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "sourceType",
+              "path",
+              "targetType"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sourceType": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "targetType": {
+                "type": "string"
+              },
+              "relation": {
+                "type": "string"
+              },
+              "transform": {
+                "type": "string"
+              },
+              "when": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "sfdv.includeCodeReferences": {
+          "type": "boolean",
+          "default": true,
+          "description": "Detect conservative source-code references in Apex and Lightning components, in addition to XML rules."
+        },
+        "sfdv.persistIndex": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Persist parsed metadata indexes in the VS Code extension storage for faster scans across editor restarts. Data stays on your machine; no files are written into your Salesforce repository."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node -e \"const fs=require('node:fs');const cp=require('node:child_process');for(const dir of ['src','media','scripts'])for(const f of fs.readdirSync(dir))if(f.endsWith('.js'))cp.execFileSync(process.execPath,['--check',dir+'/'+f],{stdio:'inherit'});\"",
+    "test:coverage": "node --experimental-test-coverage --test test/*.test.js",
+    "test:report": "node scripts/test_report.js",
+    "test:ci": "npm run check && npm test && npm run test:report"
+  },
+  "license": "MIT"
+}

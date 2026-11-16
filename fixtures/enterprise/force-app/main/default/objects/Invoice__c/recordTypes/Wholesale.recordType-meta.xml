@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Wholesale</fullName><label>Wholesale</label><active>true</active><businessProcess>Invoice_Sales</businessProcess>
+<picklistValues><picklist>Status__c</picklist><values><fullName>Draft</fullName><default>true</default></values></picklistValues>
+<compactLayoutAssignment>Invoice_Summary</compactLayoutAssignment>
+</RecordType>

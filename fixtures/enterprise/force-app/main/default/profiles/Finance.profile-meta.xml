@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+<userLicense>Salesforce</userLicense><fieldPermissions><field>Invoice__c.Status__c</field><editable>false</editable><readable>true</readable></fieldPermissions>
+<layoutAssignments><layout>Invoice__c-Invoice Layout</layout></layoutAssignments>
+<objectPermissions><object>Invoice__c</object><allowRead>true</allowRead></objectPermissions>
+<flowAccesses><flow>Calculate_Tax</flow><enabled>true</enabled></flowAccesses>
+<pageAccesses><apexPage>InvoicePrint</apexPage><enabled>true</enabled></pageAccesses>
+<recordTypeVisibilities><recordType>Invoice__c.Wholesale</recordType><visible>true</visible></recordTypeVisibilities>
+<applicationVisibilities><application>Invoice_Console</application><visible>true</visible></applicationVisibilities>
+<customPermissions><name>Manage_Invoices</name><enabled>true</enabled></customPermissions>
+<classAccesses><apexClass>BillingService</apexClass><enabled>true</enabled></classAccesses>
+</Profile>

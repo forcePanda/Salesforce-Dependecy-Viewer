@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Invoice Manager</label>
+<fieldPermissions><editable>true</editable><field>Invoice__c.Amount__c</field><readable>true</readable></fieldPermissions>
+<fieldPermissions><editable>false</editable><field>Invoice__c.NeverUsed__c</field><readable>false</readable></fieldPermissions>
+<objectPermissions><object>Invoice__c</object><allowRead>true</allowRead><allowCreate>true</allowCreate></objectPermissions>
+<classAccesses><apexClass>TaxCalculator</apexClass><enabled>true</enabled></classAccesses>
+<pageAccesses><apexPage>InvoicePrint</apexPage><enabled>true</enabled></pageAccesses>
+<classAccesses><apexClass>MissingApexClass</apexClass><enabled>false</enabled></classAccesses>
+<flowAccesses><flow>Calculate_Tax</flow><enabled>true</enabled></flowAccesses>
+<recordTypeVisibilities><recordType>Invoice__c.Wholesale</recordType><visible>true</visible></recordTypeVisibilities>
+<customPermissions><name>Manage_Invoices</name><enabled>true</enabled></customPermissions>
+<applicationVisibilities><application>Invoice_Console</application><visible>true</visible></applicationVisibilities>
+<tabSettings><tab>Invoice__c</tab><visibility>Visible</visibility></tabSettings>
+<customMetadataTypeAccesses><name>Config__mdt</name><enabled>true</enabled></customMetadataTypeAccesses>
+</PermissionSet>

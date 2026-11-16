@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+<name>Field Audit</name><reportType>Invoice_Rpt</reportType><columns>Invoice__c.Amount__c</columns>
+<filter><criteriaItems><column>Invoice__c.Status__c</column><operator>equals</operator><value>Draft</value></criteriaItems></filter>
+</Report>

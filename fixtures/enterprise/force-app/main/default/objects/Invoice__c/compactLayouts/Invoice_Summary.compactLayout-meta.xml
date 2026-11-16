@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Invoice_Summary</fullName><label>Invoice Summary</label><fields>Amount__c</fields><fields>Status__c</fields>
+</CompactLayout>

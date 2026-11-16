@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>ExternalAccountKey__c</fullName><type>IndirectLookup</type><label>External Account Key</label><referenceTo>Account</referenceTo><referenceTargetField>Account.External_Id__c</referenceTargetField>
+</CustomField>

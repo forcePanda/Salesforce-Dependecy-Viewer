@@ -1,0 +1,4 @@
+<apex:page standardController="Invoice__c" extensions="BillingService, TaxCalculator">
+  <apex:outputField value="{!Invoice__c.Amount__c}"/>
+  <apex:outputText value="{!$Label.c.Invoice_Title}"/>
+</apex:page>

@@ -1,0 +1,3 @@
+Hello {!relatedTo.Amount__c}!
+Invoice status: {!Invoice__c.Status__c}
+{!$Label.c.Invoice_Title}

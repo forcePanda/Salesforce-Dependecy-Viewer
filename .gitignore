@@ -1,0 +1,39 @@
+# Dependencies and generated outputs
+node_modules/
+dist/
+out/
+build/
+coverage/
+.nyc_output/
+*.log
+*.tmp
+*.temp
+
+# Release bundles and generated reports (publish these as release assets)
+*.zip
+SFDV-v*-test-report.json
+SFDV-v*-coverage.log
+SFDV-v*-SHA256SUMS.txt
+
+# VS Code extension-host/test output and local settings
+.vscode-test/
+.vscode/
+.cache/
+
+# OS / editor / Python caches
+.DS_Store
+Thumbs.db
+__pycache__/
+.pytest_cache/
+
+# Credentials / local Salesforce state — never commit these
+.env
+.env.*
+!.env.example
+.npmrc
+.sf/
+.sfdx/
+*.pem
+*.p12
+*.pfx
+*.key

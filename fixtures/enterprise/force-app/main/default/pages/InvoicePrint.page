@@ -1,0 +1,1 @@
+<apex:page controller="BillingService"><h1>Invoice</h1></apex:page>

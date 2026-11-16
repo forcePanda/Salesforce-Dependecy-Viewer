@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Open_Invoices</fullName><label>Open Invoices</label><columns>Amount__c</columns><filters><field>Status__c</field><operation>equals</operation><value>Draft</value></filters>
+</ListView>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Invoice_Link</fullName><linkType>url</linkType>
+<url>https://example.org/?amount={!Invoice__c.Amount__c}&amp;label={!$Label.c.Invoice_Title}&amp;raw=Payment__c.Amount__c</url>
+</WebLink>

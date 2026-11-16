@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+<layoutSections><label>General</label><layoutColumns><layoutItems><field>Amount__c</field></layoutItems><layoutItems><field>Status__c</field></layoutItems></layoutColumns></layoutSections>
+<relatedLists><relatedList>Payment__c.Invoice__c</relatedList></relatedLists>
+<quickActionList><quickActionListItems><quickActionName>Invoice__c.Calculate_Tax</quickActionName></quickActionListItems></quickActionList>
+</Layout>

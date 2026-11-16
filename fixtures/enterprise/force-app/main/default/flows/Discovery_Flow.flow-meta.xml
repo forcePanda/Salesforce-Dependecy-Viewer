@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Discovery Flow</label><start><object>Invoice__c</object></start>
+<variables><name>loaded</name><dataType>SObject</dataType><objectType>Invoice__c</objectType></variables>
+<recordLookups><name>GetInvoice</name><object>Invoice__c</object></recordLookups>
+<formulas><name>ShowInvoiceLabel</name><expression>$Label.Invoice_Title + $Record.Amount__c</expression></formulas>
+<assignments><name>AssignAmount</name><assignmentItems><assignToReference>loaded.Status__c</assignToReference>
+<value><elementReference>loaded.Amount__c</elementReference></value></assignmentItems></assignments>
+<decisions><name>AmountDecision</name><rules><name>HasAmount</name>
+<conditions><leftValueReference>GetInvoice.Amount__c</leftValueReference><operator>GreaterThan</operator>
+<rightValue><elementReference>$Record.Amount__c</elementReference></rightValue></conditions>
+</rules></decisions>
+</Flow>

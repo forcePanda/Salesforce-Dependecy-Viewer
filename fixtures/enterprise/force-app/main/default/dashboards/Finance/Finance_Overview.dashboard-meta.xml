@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+<title>Finance Overview</title><dashboardGridLayout><dashboardGridComponents><dashboardComponent><report>Finance/Invoice_Aging</report><reportName>Finance/Invoice_Totals</reportName></dashboardComponent></dashboardGridComponents></dashboardGridLayout>
+</Dashboard>

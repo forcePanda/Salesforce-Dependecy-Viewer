@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Invoice permissions</label>
+<classAccesses><apexClass>TaxCalculator</apexClass><enabled>true</enabled></classAccesses>
+<fieldPermissions><field>Invoice__c.Amount__c</field><readable>true</readable><editable>false</editable></fieldPermissions>
+<fieldPermissions><field>Invoice__c.Customer__c</field><readable>false</readable><editable>false</editable></fieldPermissions>
+</PermissionSet>

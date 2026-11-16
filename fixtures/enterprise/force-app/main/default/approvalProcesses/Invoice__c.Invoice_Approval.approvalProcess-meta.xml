@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+<label>Invoice Approval</label><object>Invoice__c</object><emailTemplate>Finance/Invoice_Reminder</emailTemplate>
+<entryCriteria><formula>Amount__c &gt; 0</formula>
+<criteriaItems><field>Status__c</field><operation>equals</operation><value>Draft</value></criteriaItems></entryCriteria>
+<approvalPageFields><fields>Amount__c</fields></approvalPageFields>
+</ApprovalProcess>
